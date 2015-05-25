@@ -1,12 +1,22 @@
-*.class
+import javax.swing.JOptionPane;
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+public class Notendurchschnitt {
+	public static void main(String[] args) {
+		String eingabe = JOptionPane.showInputDialog("Von wie vielen Noten wollen sie den Durchschnitt berechnen? ");
+		double a = 0;
+		int e = Integer.parseInt(eingabe);
+		if(e<=0){
+			JOptionPane.showMessageDialog(null, "Warum bist du dann noch hier?");
+			System.exit(1);
+		}
+		for(int i=1; i <= e;i++) {
+			String eingabe2 = JOptionPane.showInputDialog("Wie lautet die "+ i +". Note?");
+			double m = Integer.parseInt(eingabe2);
+			a = a + m;
+		}
+		double knorke = a/e;
+		JOptionPane.showMessageDialog(null, knorke);
+		
+	}
+}
